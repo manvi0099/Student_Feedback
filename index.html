@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Feedback Collector</title>
+  <link rel="stylesheet" href="student.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <img src="images/img.png" alt="Student Feedback Collector" class="hero-banner" />
+  </header>
+
+  <main class="container">
+
+    <!-- Feedback Form -->
+    <section class="form-section">
+      <form id="feedback-form" novalidate>
+
+        <div class="form-group">
+          <label for="student-name">Student Name</label>
+          <input
+            type="text"
+            id="student-name"
+            name="student-name"
+            placeholder="Enter your full name"
+            required
+          />
+          <span class="error-message" id="student-name-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          />
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course</label>
+          <select id="course" name="course" required>
+            <option value="" disabled selected>Select a course</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Data Science">Data Science</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="Machine Learning">Machine Learning</option>
+          </select>
+          <span class="error-message" id="course-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="" disabled selected>Select a rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <span class="error-message" id="rating-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback">Feedback</label>
+          <textarea
+            id="feedback"
+            name="feedback"
+            rows="4"
+            placeholder="Write your feedback here"
+            required
+          ></textarea>
+          <span class="error-message" id="feedback-error"></span>
+        </div>
+
+        <button type="submit" id="submit-btn">Add Feedback</button>
+
+      </form>
+    </section>
+
+    <!-- Feedback Summary -->
+    <section class="summary-section">
+      <p>Total Feedback Entries: <span id="total-count">0</span></p>
+    </section>
+
+    <!-- Feedback List -->
+    <section class="list-section">
+      <h2>All Feedback</h2>
+      <div id="feedback-list"></div>
+    </section>
+
+  </main>
+
+  <script type="module" src="student.js"></script>
+</body>
+</html>

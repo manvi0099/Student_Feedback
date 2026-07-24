@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Compiled TypeScript output
+dist/
+*.js.map
+manvi.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log
+yarn-error.log
+*.log
+
+# Environment variables
+.env
+.env.local
