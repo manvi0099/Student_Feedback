@@ -11,8 +11,8 @@ Repository instructions for AI coding agents (Codex, Claude Code, etc.) working 
 | File | Responsibility |
 |---|---|
 | `index.html` | Page structure only — the form markup, summary section, and list container. No logic, no inline styles or scripts. |
-| `style.css` | All visual styling — layout, form design, card styling, validation error styling, responsive behavior. No logic. |
-| `manvi.ts` | **All application logic** — interfaces, validation, LocalStorage read/write, DOM rendering, and form event handling. |
+| `student.css` | All visual styling — layout, form design, card styling, validation error styling, responsive behavior. No logic. |
+| `student.ts` | **All application logic** — interfaces, validation, LocalStorage read/write, DOM rendering, and form event handling. |
 | `tsconfig.json` | TypeScript compiler configuration (target, module, strict mode, output settings). |
 
 Stack: TypeScript, HTML5, CSS3, browser LocalStorage. No frameworks, no external libraries.
@@ -23,7 +23,7 @@ Stack: TypeScript, HTML5, CSS3, browser LocalStorage. No frameworks, no external
   ```bash
   tsc
   ```
-  Reads `tsconfig.json` and outputs `manvi.js` next to `index.html`.
+  Reads `tsconfig.json` and outputs `student.js` next to `index.html`.
 
 - **Type-check without emitting output:**
   ```bash
@@ -33,22 +33,22 @@ Stack: TypeScript, HTML5, CSS3, browser LocalStorage. No frameworks, no external
 - **Preview the app:**
   Open `index.html` directly in a browser, or use a Live Server (e.g. VS Code's "Live Server" extension) for auto-reload during development.
 
-There is no separate build, test, or start script — the app runs directly as static files once `manvi.js` is compiled.
+There is no separate build, test, or start script — the app runs directly as static files once `student.js` is compiled.
 
 ## 4. Coding Conventions
 
 - Use **strict TypeScript** at all times — do not use `any`. If a type is genuinely unknown, use a specific union type or `unknown` with proper narrowing.
 - Keep functions **small and single-purpose**, with clear, descriptive names (e.g. `validateEmail`, `renderFeedbackList`, `deleteFeedback`).
-- Keep **all logic inside `manvi.ts`** unless explicitly told to split it into additional files.
+- Keep **all logic inside `student.ts`** unless explicitly told to split it into additional files.
 - Add a short comment above any new function explaining its purpose.
-- Follow the existing section structure in `manvi.ts` (Interfaces → Validation → LocalStorage → Render → Form Handling → Initialization). Place new code in the matching section rather than appending randomly.
+- Follow the existing section structure in `student.ts` (Interfaces → Validation → LocalStorage → Render → Form Handling → Initialization). Place new code in the matching section rather than appending randomly.
 - Do not introduce external libraries, frameworks, or build tools without explicit approval.
 
 ## 5. Boundaries — Do Not Change Without Asking
 
 - Do **not** remove or weaken existing validation rules (name, email format, course selection, rating range 1–5, non-empty feedback).
 - Do **not** change the shape of the `Feedback` interface without also updating every function that reads or writes it (`getAllFeedback`, `saveFeedback`, `deleteFeedback`, render functions) so LocalStorage data stays consistent.
-- Do **not** change existing DOM element `id` attributes in `index.html` without updating the corresponding references in `manvi.ts`, and vice versa.
+- Do **not** change existing DOM element `id` attributes in `index.html` without updating the corresponding references in `student.ts`, and vice versa.
 - Do **not** delete or bypass the LocalStorage persistence logic.
 - Do **not** add a backend, database, or network calls — this project is intentionally client-side only.
 

@@ -24,9 +24,9 @@ No external libraries or frameworks are used.
 ```
 student-feedback-collector/
 ├── index.html
-├── style.css
-├── manvi.ts
-├── manvi.js       (generated after compiling)
+├── student.css
+├── student.ts
+├── student.js       (generated after compiling)
 ├── tsconfig.json
 └── README.md
 ```
@@ -34,8 +34,8 @@ student-feedback-collector/
 | File | Purpose |
 |---|---|
 | `index.html` | Page structure: the feedback form, summary section, and the list container where submitted entries are displayed. |
-| `style.css` | All visual styling — layout, form design, card styling, validation error styling, and responsive behavior. |
-| `manvi.ts` | Core application logic — interfaces, validation functions, LocalStorage read/write, rendering, and form handling. Compiles to `manvi.js`. |
+| `student.css` | All visual styling — layout, form design, card styling, validation error styling, and responsive behavior. |
+| `student.ts` | Core application logic — interfaces, validation functions, LocalStorage read/write, rendering, and form handling. Compiles to `student.js`. |
 | `tsconfig.json` | TypeScript compiler configuration — defines target, module type, strict type-checking, and output settings. |
 
 ## How to Run Locally
@@ -49,7 +49,7 @@ student-feedback-collector/
    ```bash
    tsc
    ```
-   This reads `tsconfig.json` and generates `manvi.js` in the project folder.
+   This reads `tsconfig.json` and generates `student.js` in the project folder.
 
 3. **Open the app:**
    - Simplest way: double-click `index.html` to open it directly in your browser, **or**
