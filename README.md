@@ -26,7 +26,7 @@ student-feedback-collector/
 ├── index.html
 ├── student.css
 ├── student.ts
-├── student.js       (generated after compiling)
+├── student.js       
 ├── tsconfig.json
 └── README.md
 ```
@@ -59,8 +59,6 @@ student-feedback-collector/
 
 ## Validation Rules
 
-| Field | Rule |
-|---|---|
 | Student Name | Required, cannot be empty |
 | Email | Required, must match a valid email format |
 | Course | Required, must select one option from the dropdown |
